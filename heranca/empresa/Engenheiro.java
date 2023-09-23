@@ -1,50 +1,19 @@
-package heranca.empresa.Engenheiro;
+package heranca.empresa;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class Engenheiro{
-
-    private String nome;
-    private Integer cpf;
-    private Integer telefone;
+public class Engenheiro extends Funcionario{
     private String crea;
     private String projeto;
     
     public Engenheiro(){
-
     }
 
     public Engenheiro(String nome, Integer cpf, Integer telefone, String crea, String projeto){
-        this.nome = nome;
-        this.cpf = cpf;
-        this.telefone = telefone;
+        super(nome, cpf, telefone);
         this.crea= crea;
         this.projeto = projeto;
-
-    }
-
-    public String getNome(){
-        return this.nome;
-    }
-
-    public void setNome(String nome){
-        this.nome = nome;
-    }
-
-    public Integer getCpf(){
-        return this.cpf;
-    }
-
-    public void setCpf(Integer cpf){
-        this.cpf = cpf;
-    }
-    public Integer getTelefone(){
-        return this.cpf;
-    }
-
-    public void setTelefone(Integer telefone){
-        this.telefone = telefone;
     }
 
     public String getCrea(){
@@ -63,25 +32,27 @@ public class Engenheiro{
         this.projeto = projeto;
     }
 
+    @Override
     public BigDecimal getSalario(){
-        return new BigDecimal(val:10000.00);
+        return new BigDecimal(10000.00);
     }
 
+    @Override
     public BigDecimal getBonificacao(){
-        return getSalario().multiply(new BigDecimal(val:0.15));
+        return getSalario().multiply(new BigDecimal(0.15));
 
     }
 
     @Override
     public String toString() {
         return "{" +
-            " nome'" + getNome() + "'" +
-            ", cpf'" + getCpf() + "'" +
-            ", telefone'" + getTelefone() + "'" +
+            " nome='" + getNome() + "'" +
+            ", cpf='" + getCpf() + "'" +
+            ", telefone='" + getTelefone() + "'" +
             ", crea'" + getCrea() + "'" +
             ", projeto'" + getProjeto() + "'" +
             ", salario '" + getSalario() + "'" +
-            ", bonificacao='" + getBonificacao().setScale(2, RoundingMode.UP) + "'" +
+            ", bonificacao='" + getBonificacao().setScale(2, RoundingMode.HALF_UP) + "'" +
             "}";
     }
     
