@@ -1,6 +1,6 @@
-package parque;
+package atividade6;
 
-import parque.empresa.Passaporte;
+import atividade6.parque.Passaporte;
 
 class Executavel {
             public static void main(String[] args) {

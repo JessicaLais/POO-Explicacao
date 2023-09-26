@@ -1,4 +1,4 @@
-package parque.empresa;
+package atividade6.parque;
 
 import java.math.BigDecimal;
 
